@@ -28,23 +28,34 @@ export function Navbar() {
         >
             <div className="container mx-auto flex items-center justify-between px-4">
                 {/* Left: Logo */}
-                <Link href="/" className="flex items-center">
-                    <Image src="/canton.png" alt="Cantón Creativo Logo" width={180} height={45} className="object-contain" priority />
+                <Link href="/" className={cn("flex items-center gap-3 hover:opacity-90 transition-all duration-300 origin-left", scrolled ? "scale-90" : "scale-100")}>
+                    <Image
+                        src="/logo-canton.png"
+                        alt="Cantón Creativo Logo"
+                        width={100}
+                        height={30}
+                        className="object-contain"
+                        priority
+                    />
                 </Link>
 
                 {/* Center: Navigation Grid exact */}
                 <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 text-[#053040] dark:text-[#ffffff]">
-                    <Link href="/" className="text-sm font-medium hover:text-[#577c8e] transition-colors">
+                    <Link href="/" className="relative group text-sm font-medium hover:text-[#577c8e] transition-colors">
                         Agencia
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#577c8e] transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/consultoria" className="text-sm font-medium hover:text-[#577c8e] transition-colors">
+                    <Link href="/consultoria" className="relative group text-sm font-medium hover:text-[#577c8e] transition-colors">
                         Consultoría
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#577c8e] transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/aprende" className="text-sm font-medium hover:text-[#577c8e] transition-colors">
+                    <Link href="/aprende" className="relative group text-sm font-medium hover:text-[#577c8e] transition-colors">
                         Aprende
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#577c8e] transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/tienda" className="text-sm font-medium hover:text-[#577c8e] transition-colors">
+                    <Link href="/tienda" className="relative group text-sm font-medium hover:text-[#577c8e] transition-colors">
                         Tienda
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#577c8e] transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                 </div>
 

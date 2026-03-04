@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.cantoncreativo.mx"),
   title: "Cantón Creativo | Agencia",
   description: "Estrategias high-ticket y consultoría premium para negocios creativos y B2B.",
 };
@@ -33,7 +34,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >

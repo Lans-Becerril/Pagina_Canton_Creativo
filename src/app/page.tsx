@@ -30,27 +30,27 @@ export default function Home() {
           </FadeIn>
         </div>
         {/* Decorative element */}
-        <div className="absolute -z-10 top-0 right-0 w-1/3 h-full bg-[#f4efeb]/50 dark:bg-[#184c56]/50 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute -z-10 top-0 right-0 w-1/3 h-full bg-[#f4efeb]/50 dark:bg-[#ffffff]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
       </header>
 
       {/* 2. Identificar el problema / Empatía */}
-      <section className="py-24 bg-[#f4efeb] dark:bg-[#184c56]">
+      <section className="py-24 bg-[#053040] dark:bg-[#053040] dark:border-y border-[#ffffff]/10">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="left">
               <span className="text-[#577c8e] dark:text-[#cdd7e0] font-bold uppercase tracking-widest text-sm">El Desafío</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-4 leading-tight text-[#053040] dark:text-[#ffffff]">
+              <h2 className="text-3xl md:text-4xl font-bold mt-4 leading-tight text-[#ffffff] dark:text-[#ffffff]">
                 Sabes que tienes un gran mensaje, pero pasas más tiempo editando y adivinando qué publicar que cerrando clientes.
               </h2>
-              <p className="mt-6 text-[#184c56] dark:text-[#cdd7e0] text-xl italic font-light">
+              <p className="mt-6 text-[#cdd7e0] dark:text-[#cdd7e0] text-xl italic font-light">
                 "El estancamiento agota."
               </p>
             </FadeIn>
             <FadeIn direction="right" delay={0.2}>
-              <div className="bg-[#ffffff] dark:bg-[#053040] border border-[#cdd7e0]/20 dark:border-[#ffffff]/10 p-8 rounded-2xl relative overflow-hidden shadow-lg">
+              <div className="bg-[#184c56] dark:bg-[#053040] border border-[#cdd7e0]/10 dark:border-[#ffffff]/10 p-8 rounded-2xl relative overflow-hidden shadow-lg">
                 <CheckCircle2 className="text-[#577c8e] w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-bold mb-4 text-[#053040] dark:text-[#ffffff]">3+ Años de Experiencia</h3>
-                <p className="text-[#184c56] dark:text-[#cdd7e0] leading-relaxed text-lg relative z-10">
+                <h3 className="text-2xl font-bold mb-4 text-[#ffffff] dark:text-[#ffffff]">3+ Años de Experiencia</h3>
+                <p className="text-[#cdd7e0] dark:text-[#cdd7e0] leading-relaxed text-lg relative z-10">
                   Llevamos más de 3 años descifrando los algoritmos y las redes para que tú no tengas que hacerlo. No somos solo una agencia, somos tu departamento de crecimiento.
                 </p>
               </div>
@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       {/* 3. EL PLAN (SERVICIOS - RESTAURAR) */}
-      <section className="py-24 max-w-7xl mx-auto px-4 bg-[#ffffff] dark:bg-[#053040]">
+      <section className="py-24 max-w-7xl mx-auto px-4 bg-[#f4efeb] dark:bg-[#053040]">
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-[#053040] dark:text-[#ffffff] mb-4">El Plan Estratégico</h2>
@@ -70,8 +70,8 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <FadeIn delay={0.1}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
-              <div className="w-14 h-14 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
+            <div className="bg-[#ffffff] dark:bg-[#ffffff]/5 p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
+              <div className="w-14 h-14 bg-[#f4efeb] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
                 <PlaySquare className="text-[#053040] dark:text-[#ffffff] group-hover:text-[#ffffff]" />
               </div>
               <h4 className="text-xl font-bold mb-3 text-[#053040] dark:text-[#ffffff]">Producción Audiovisual</h4>
@@ -80,8 +80,8 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
-              <div className="w-14 h-14 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
+            <div className="bg-[#ffffff] dark:bg-[#ffffff]/5 p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
+              <div className="w-14 h-14 bg-[#f4efeb] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
                 <ListChecks className="text-[#053040] dark:text-[#ffffff] group-hover:text-[#ffffff]" />
               </div>
               <h4 className="text-xl font-bold mb-3 text-[#053040] dark:text-[#ffffff]">Gestión de Redes</h4>
@@ -90,8 +90,8 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
-              <div className="w-14 h-14 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
+            <div className="bg-[#ffffff] dark:bg-[#ffffff]/5 p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
+              <div className="w-14 h-14 bg-[#f4efeb] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
                 <MousePointer2 className="text-[#053040] dark:text-[#ffffff] group-hover:text-[#ffffff]" />
               </div>
               <h4 className="text-xl font-bold mb-3 text-[#053040] dark:text-[#ffffff]">Publicidad</h4>
@@ -100,8 +100,8 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
-              <div className="w-14 h-14 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
+            <div className="bg-[#ffffff] dark:bg-[#ffffff]/5 p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 dark:border-transparent hover:border-[#577c8e] transition-colors group h-full">
+              <div className="w-14 h-14 bg-[#f4efeb] dark:bg-[#053040] flex items-center justify-center rounded-xl mb-6 group-hover:bg-[#577c8e] transition-colors">
                 <Globe className="text-[#053040] dark:text-[#ffffff] group-hover:text-[#ffffff]" />
               </div>
               <h4 className="text-xl font-bold mb-3 text-[#053040] dark:text-[#ffffff]">Páginas Web</h4>
@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* 4. Prueba Social */}
-      <section className="py-24 bg-[#f4efeb] dark:bg-[#184c56] overflow-hidden">
+      <section className="py-24 bg-[#ffffff] dark:bg-[#053040] dark:border-y border-[#ffffff]/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
           <h2 className="text-4xl font-black text-[#053040] dark:text-[#ffffff] mb-4">Historias de Éxito</h2>
           <p className="text-[#184c56] dark:text-[#cdd7e0] text-lg">Casos reales de marcas que escalaron con Cantón Creativo.</p>
@@ -122,7 +122,7 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* 5. ESTADÍSTICAS (NUEVA UBICACIÓN) */}
+      {/* 5. RESULTADOS QUE HABLAN POR SI SOLOS */}
       <section className="py-24 max-w-7xl mx-auto px-4 bg-[#ffffff] dark:bg-[#053040]">
         <FadeIn>
           <div className="text-center mb-16">
@@ -133,7 +133,7 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <FadeIn delay={0.1}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
+            <div className="bg-[#f4efeb] dark:bg-[#ffffff]/5 p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
               <div className="w-20 h-20 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
                 <Users className="w-10 h-10 text-[#053040] dark:text-[#ffffff] transition-colors duration-300 group-hover:text-[#577c8e]" />
               </div>
@@ -143,7 +143,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
+            <div className="bg-[#f4efeb] dark:bg-[#ffffff]/5 p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
               <div className="w-20 h-20 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
                 <TrendingUp className="w-10 h-10 text-[#053040] dark:text-[#ffffff] transition-colors duration-300 group-hover:text-[#577c8e]" />
               </div>
@@ -153,7 +153,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
+            <div className="bg-[#f4efeb] dark:bg-[#ffffff]/5 p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
               <div className="w-20 h-20 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
                 <HeartHandshake className="w-10 h-10 text-[#053040] dark:text-[#ffffff] transition-colors duration-300 group-hover:text-[#577c8e]" />
               </div>
@@ -163,7 +163,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <div className="bg-[#f4efeb] dark:bg-[#184c56] p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
+            <div className="bg-[#f4efeb] dark:bg-[#ffffff]/5 p-8 rounded-2xl group h-full cursor-pointer hover:shadow-xl transition-all flex flex-col items-center text-center">
               <div className="w-20 h-20 bg-[#ffffff] dark:bg-[#053040] flex items-center justify-center rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
                 <BarChart3 className="w-10 h-10 text-[#053040] dark:text-[#ffffff] transition-colors duration-300 group-hover:text-[#577c8e]" />
               </div>
@@ -175,7 +175,9 @@ export default function Home() {
       </section>
 
       {/* 6. COSTO DE NO ACTUAR Y PORTAFOLIO (CORRECCIÓN MASONRY) */}
-      <section className="py-24 bg-[#f4efeb] dark:bg-[#184c56] overflow-hidden">
+      {/* UPDATE INSTAGRAM LINKS HERE: Replace the href attribute in each <a> tag with your actual Instagram post URL. */}
+      {/* UPDATE IMAGES HERE: Replace the src attribute in each <img> tag with your actual image URL or local path. */}
+      <section className="py-24 bg-[#f4efeb] dark:bg-[#053040] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center md:text-left mb-16">
             <FadeIn>
@@ -187,44 +189,74 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[200px]">
               {/* 10 containers masonry */}
               {/* 1 */}
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Portafolio 1" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Portafolio 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder1" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 2 */}
-              <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Portafolio 2" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Portafolio 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder2" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 3 */}
-              <div className="col-span-2 row-span-1 md:row-span-2 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Portafolio 3" className="w-full h-full object-cover" />
+              <div className="group relative col-span-2 row-span-1 md:row-span-2 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Portafolio 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder3" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 4 */}
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Portafolio 4" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Portafolio 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder4" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 5 */}
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1533750349088-cd071a92f449?q=80&w=800&auto=format&fit=crop" alt="Portafolio 5" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1533750349088-cd071a92f449?q=80&w=800&auto=format&fit=crop" alt="Portafolio 5" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder5" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 6 */}
-              <div className="col-span-1 md:col-span-2 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=800&auto=format&fit=crop" alt="Portafolio 6" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 md:col-span-2 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=800&auto=format&fit=crop" alt="Portafolio 6" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder6" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 7 */}
-              <div className="col-span-1 row-span-1 md:row-span-2 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800&auto=format&fit=crop" alt="Portafolio 7" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 md:row-span-2 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800&auto=format&fit=crop" alt="Portafolio 7" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder7" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 8 */}
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Portafolio 8" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Portafolio 8" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder8" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 9 */}
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" alt="Portafolio 9" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" alt="Portafolio 9" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder9" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
               {/* 10 */}
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Portafolio 10" className="w-full h-full object-cover" />
+              <div className="group relative col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Portafolio 10" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://instagram.com/p/placeholder10" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#ffffff] text-[#053040] font-bold rounded-full hover:bg-[#577c8e] hover:text-[#ffffff] transition-colors">Ver más</a>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -232,19 +264,19 @@ export default function Home() {
       </section>
 
       {/* 7. CTA Final */}
-      <section className="py-32 bg-[#ffffff] dark:bg-[#053040] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+      <section className="py-32 bg-[#053040] dark:bg-[#053040] relative overflow-hidden dark:border-t border-[#ffffff]/10">
+        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#577c8e] rounded-full blur-[120px]"></div>
         </div>
         <FadeIn>
           <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-4xl md:text-6xl font-black text-[#053040] dark:text-[#ffffff] mb-10 leading-tight">¿Listo para escalar sin límites?</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-[#ffffff] dark:text-[#ffffff] mb-10 leading-tight">¿Listo para escalar sin límites?</h2>
             <Link href="/consultoria">
-              <button className="w-full sm:w-auto px-12 py-8 bg-[#053040] dark:bg-[#577c8e] text-[#ffffff] text-2xl md:text-3xl font-black rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
+              <button className="w-full sm:w-auto px-12 py-8 bg-[#ffffff] dark:bg-[#ffffff] text-[#053040] dark:text-[#053040] text-2xl md:text-3xl font-black rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
                 Hablemos de tu negocio
               </button>
             </Link>
-            <p className="mt-8 text-[#184c56] dark:text-[#cdd7e0] font-medium">Sin compromisos. Solo una charla sobre crecimiento.</p>
+            <p className="mt-8 text-[#cdd7e0] dark:text-[#cdd7e0] font-medium">Sin compromisos. Solo una charla sobre crecimiento.</p>
           </div>
         </FadeIn>
       </section>
