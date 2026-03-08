@@ -4,8 +4,8 @@ export default function PoliticaReembolsoPage() {
     return (
         <main className="max-w-3xl mx-auto py-20 px-6">
             <FadeIn>
-                <div className="prose prose-slate dark:prose-invert max-w-none">
-                    <h1 className="text-3xl md:text-5xl font-black text-primary dark:text-white mb-8">
+                <div className="prose prose-slate max-w-none">
+                    <h1 className="text-3xl md:text-5xl font-black text-primary mb-8">
                         Política de Reembolsos y Cancelaciones
                     </h1>
 

@@ -53,13 +53,13 @@ export function Footer() {
                     <div className="flex flex-col items-start">
                         <h4 className="font-bold text-lg mb-6 text-[#ffffff]">Síguenos</h4>
                         <div className="flex items-center gap-5 text-[#cdd7e0]">
-                            <a href="#" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="Instagram">
+                            <a href="https://www.instagram.com/cantoncreativo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="Instagram">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="Facebook">
+                            <a href="https://www.facebook.com/CantonCreativo" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="Facebook">
                                 <Facebook size={20} />
                             </a>
-                            <a href="#" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="YouTube">
+                            <a href="https://www.youtube.com/@frank.escobedo" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="YouTube">
                                 <Youtube size={20} />
                             </a>
                         </div>

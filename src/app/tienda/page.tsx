@@ -5,7 +5,7 @@ export default function TiendaPage() {
     return (
         <main className="flex flex-1 items-center justify-center p-6 lg:p-20 min-h-[80vh]">
             <FadeIn className="max-w-[960px] w-full">
-                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch min-h-[450px] border border-soft-blue/20 dark:border-white/10 relative">
+                <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch min-h-[450px] border border-soft-blue/20 relative">
 
                     {/* Decorative element */}
                     <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -28,8 +28,8 @@ export default function TiendaPage() {
                     {/* Content Section */}
                     <div className="w-full md:w-1/2 p-8 lg:p-12 flex flex-col justify-center gap-6 relative z-10">
                         <div className="space-y-4">
-                            <h1 className="text-primary dark:text-white text-4xl font-black tracking-tight">Próximamente...</h1>
-                            <p className="text-accent-blue dark:text-slate-400 text-lg leading-relaxed font-medium">
+                            <h1 className="text-primary text-4xl font-black tracking-tight">Próximamente...</h1>
+                            <p className="text-accent-blue text-lg leading-relaxed font-medium">
                                 Acelera tu edición. Eleva tu contenido. Muy pronto recursos premium, presets y plantillas diseñadas por nuestro equipo para optimizar tu flujo de trabajo.
                             </p>
                         </div>
@@ -39,7 +39,7 @@ export default function TiendaPage() {
                                 <label className="text-sm font-bold text-slate-500 uppercase tracking-widest">Sé el primero en saberlo</label>
                                 <div className="flex flex-col sm:flex-row gap-2">
                                     <input
-                                        className="flex-1 rounded-xl border-soft-blue/50 dark:border-slate-700 bg-black/5 focus:border-primary focus:ring-primary text-sm p-4 dark:bg-slate-800 dark:text-white"
+                                        className="flex-1 rounded-xl border-soft-blue/50 bg-black/5 focus:border-primary focus:ring-primary text-sm p-4"
                                         placeholder="Tu correo electrónico"
                                         type="email"
                                         required
@@ -50,7 +50,7 @@ export default function TiendaPage() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-6 pt-6 border-t border-soft-blue/30 dark:border-slate-800">
+                            <div className="flex items-center gap-6 pt-6 border-t border-soft-blue/30">
                                 <div className="flex -space-x-4">
                                     {[
                                         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80",
@@ -59,11 +59,11 @@ export default function TiendaPage() {
                                     ].map((img, i) => (
                                         <div
                                             key={i}
-                                            className="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-cover bg-center"
+                                            className="w-10 h-10 rounded-full border-2 border-white bg-cover bg-center"
                                             style={{ backgroundImage: `url('${img}')` }}
                                         ></div>
                                     ))}
-                                    <div className="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-accent-blue flex items-center justify-center text-xs text-white font-black">
+                                    <div className="w-10 h-10 rounded-full border-2 border-white bg-accent-blue flex items-center justify-center text-xs text-white font-black">
                                         +500
                                     </div>
                                 </div>
