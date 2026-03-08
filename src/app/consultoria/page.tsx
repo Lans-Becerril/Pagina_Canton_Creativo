@@ -57,26 +57,26 @@ export default function ConsultoriaPage() {
                     <FadeIn>
                         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-brand border border-soft-blue/30 flex flex-col md:flex-row items-center gap-10">
                             <div className="md:w-1/2">
-                                <h2 className="text-3xl font-bold text-primary mb-4">¿Te identificas con esto?</h2>
+                                <h2 className="text-3xl font-bold text-primary mb-4">¡Deja de adivinar por qué tu canal no crece!</h2>
                                 <p className="text-lg text-slate-600 mb-6 italic">
-                                    "Subo mucho contenido pero nadie me ve... Siento que mi canal está estancado."
+                                    "Sé que mi contenido es bueno, pero los números no suben. Necesito que un experto me diga exactamente qué estoy haciendo mal."
                                 </p>
                                 <div className="flex items-center gap-2 text-accent-teal font-bold uppercase tracking-widest text-sm">
-                                    <span className="material-symbols-outlined text-xl">insights</span> Solución Inmediata
+                                    <span className="material-symbols-outlined text-xl" >Obtén tu diagnóstico</span> Express
                                 </div>
                             </div>
                             <div className="md:w-1/2 w-full">
                                 <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-                                    <h3 className="text-xl font-bold mb-4">Obtén un Diagnóstico Gratuito</h3>
+                                    <h3 className="text-xl font-bold mb-4">Descubre qué está frenando tus vistas</h3>
                                     <form className="space-y-4">
                                         <input
                                             className="w-full px-4 py-3 rounded-lg border-soft-blue focus:ring-primary focus:border-primary bg-white"
-                                            placeholder="Tu correo electrónico principal"
+                                            placeholder="¿A dónde te enviamos los resultados?"
                                             type="email"
                                             required
                                         />
                                         <button type="button" className="w-full bg-accent-teal text-white font-bold py-3 rounded-lg hover:bg-primary transition-colors">
-                                            ENVIAR MI DIAGNÓSTICO
+                                            QUIERO MI DIAGNÓSTICO GRATIS
                                         </button>
                                     </form>
                                 </div>
@@ -96,7 +96,57 @@ export default function ConsultoriaPage() {
                         </p>
                     </FadeIn>
                 </div>
-                <div className="max-w-4xl mx-auto px-4 mb-24">
+
+                {/* Tripwires (Cursos Individuales) */}
+                <div className="max-w-7xl mx-auto px-4 mb-24">
+                    <FadeIn>
+                        <h3 className="text-2xl font-bold text-center mb-10 text-primary">Cursos individuales</h3>
+                    </FadeIn>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <FadeIn delay={0.1}>
+                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
+                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
+                                    <Clock />
+                                </div>
+                                <h4 className="text-xl font-bold mb-2">Hora extra de asesoría</h4>
+                                <p className="text-slate-500 mb-6 text-sm">¿Sientes que 60 min no son suficientes? Añade tiempo para profundizar.</p>
+                                <div className="flex items-center justify-between mt-auto">
+                                    <span className="text-lg font-bold text-primary">$1,000 MXN</span>
+                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
+                                </div>
+                            </div>
+                        </FadeIn>
+                        <FadeIn delay={0.2}>
+                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
+                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
+                                    <Palette />
+                                </div>
+                                <h4 className="text-xl font-bold mb-2">Kit de Miniaturas Pro</h4>
+                                <p className="text-slate-500 mb-6 text-sm">3 plantillas editables para aumentar tu CTR inmediatamente.</p>
+                                <div className="flex items-center justify-between mt-auto">
+                                    <span className="text-lg font-bold text-primary">$850 MXN</span>
+                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
+                                </div>
+                            </div>
+                        </FadeIn>
+                        <FadeIn delay={0.3}>
+                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
+                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
+                                    <ListChecks />
+                                </div>
+                                <h4 className="text-xl font-bold mb-2">Script Checklist</h4>
+                                <p className="text-slate-500 mb-6 text-sm">La estructura exacta para retener a tu audiencia en cada video.</p>
+                                <div className="flex items-center justify-between mt-auto">
+                                    <span className="text-lg font-bold text-primary">$450 MXN</span>
+                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </div>
+
+                {/* Llamada de asesoría (Consultoría 1 a 1) */}
+                <div className="max-w-4xl mx-auto px-4">
                     <FadeIn delay={0.2}>
                         <div className="relative bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-soft-blue/20 ring-4 ring-primary/5">
                             <div className="absolute top-0 right-0 bg-primary text-white px-8 py-2 font-bold rounded-bl-2xl">
@@ -149,57 +199,9 @@ export default function ConsultoriaPage() {
                         </div>
                     </FadeIn>
                 </div>
-
-                {/* Tripwires */}
-                <div className="max-w-7xl mx-auto px-4">
-                    <FadeIn>
-                        <h3 className="text-2xl font-bold text-center mb-10 text-primary">Servicios Complementarios</h3>
-                    </FadeIn>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <FadeIn delay={0.1}>
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
-                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
-                                    <Clock />
-                                </div>
-                                <h4 className="text-xl font-bold mb-2">Hora extra de asesoría</h4>
-                                <p className="text-slate-500 mb-6 text-sm">¿Sientes que 60 min no son suficientes? Añade tiempo para profundizar.</p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-lg font-bold text-primary">$1,000 MXN</span>
-                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
-                                </div>
-                            </div>
-                        </FadeIn>
-                        <FadeIn delay={0.2}>
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
-                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
-                                    <Palette />
-                                </div>
-                                <h4 className="text-xl font-bold mb-2">Kit de Miniaturas Pro</h4>
-                                <p className="text-slate-500 mb-6 text-sm">3 plantillas editables para aumentar tu CTR inmediatamente.</p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-lg font-bold text-primary">$850 MXN</span>
-                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
-                                </div>
-                            </div>
-                        </FadeIn>
-                        <FadeIn delay={0.3}>
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
-                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
-                                    <ListChecks />
-                                </div>
-                                <h4 className="text-xl font-bold mb-2">Script Checklist</h4>
-                                <p className="text-slate-500 mb-6 text-sm">La estructura exacta para retener a tu audiencia en cada video.</p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-lg font-bold text-primary">$450 MXN</span>
-                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
-                                </div>
-                            </div>
-                        </FadeIn>
-                    </div>
-                </div>
             </section>
 
-            {/* Upsell Section */}
+            {/* Upsell Section (Curso Completo) */}
             <section className="py-24 bg-primary text-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <FadeIn>
@@ -243,14 +245,14 @@ export default function ConsultoriaPage() {
                 <div className="max-w-7xl mx-auto px-4">
                     <FadeIn>
                         <h2 className="text-4xl font-extrabold text-primary text-center mb-16 underline decoration-accent-blue decoration-4 underline-offset-8">
-                            Nuestros Alumnos Hablan con Números
+                            Conoce los resultados que nuestros alumnos han obtenido
                         </h2>
                     </FadeIn>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
-                            "https://lh3.googleusercontent.com/aida-public/AB6AXuCF_RpYqTdyjv1CnL3A8lt10vs7SMpJ5ys7RHe84-rR73_e9ANTlCC5IyXV2Xg_p5nBPFNr0ijstpzSwCf-kodhSc6dlbd4PEn-Kxgj02Ii73NgCdJXpmL_O_r7jZGYYgsmjnX1nd8NKCKJyfBBGI9rFsqNmkWYGuy1xb7QXrMyisFeEQ81zAX-qyuQVgYQNf3BIl-MG8GFF1YPw0XKIGerXm2QItSpQ-_taNKWcD5qKYoyhl7I3AzdRDdb6NmL7ivSjhodfgg0BZKD",
-                            "https://lh3.googleusercontent.com/aida-public/AB6AXuBQ63pp0eu3rOw6kK7_07n6EveLSMKaMrnEFPn7nN7X-BQZOKDGNsDdnKbx3KslqcxegRyK1BIxUnKeTPA7ZBow4g-XCdS-twrD4z5JuUc_5D3kfVKDMkWhcvarayY5BSzjl7YJriMXHN3nrM0eWIpTzvSAqGOBZVRDT05MUOU6Y7NG4yCyzMFGVMl1FnjOZcUhExr17sVs8JZm7Loei2RsQNc37a6uZtxE6-a-LW2TqTAa2NW4_lu05kP8mvkkGrvXz73o3Sq_W8j6",
-                            "https://lh3.googleusercontent.com/aida-public/AB6AXuBbzQoiE9BvzA0DOC5OmLxq38JEcgyhmIxkNTXOSUC0DXkjk2vOQ6CfoWg_uW_vwJ-LiiqeU3AYQJs1z41uzqNOiOPs2B184KW3WoSy3-_RMDI4ALVULrKOt-Y2ZwddKTgSD3SpZAywzeB8URLJgHHwvM8Sz-_sbXqG3vXVPlpFxtLIITMWaM0JyInaLo8oj4DE1q3MkDsaxOvuMog2ZUDYownJnnitxKZqTKuDz9gya6IpTEDRF80cu5FpcEY7YSjXNm57CsbmIm1g"
+                            "/resultados/resultados1.webp",
+                            "/resultados/resultados1.webp",
+                            "/resultados/resultados1.webp"
                         ].map((img, i) => (
                             <FadeIn key={i} delay={i * 0.2}>
                                 <div className="rounded-2xl overflow-hidden shadow-brand border-2 border-transparent hover:border-accent-blue transition-all h-full">
