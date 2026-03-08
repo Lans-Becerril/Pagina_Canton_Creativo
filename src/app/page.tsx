@@ -12,10 +12,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeIn>
             <div className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase bg-[#184c56]/10 text-[#184c56] rounded-full">
-              Marketing de Resultados
+              Agencia de Crecimiento Digital
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#053040] leading-[1.1] mb-6 max-w-4xl mx-auto">
-              Si quieres dominar tu nicho, <span className="text-[#577c8e]">multiplica tus ventas.</span>
+              Tú lidera tu negocio, nosotros nos encargamos de que <span className="text-[#577c8e]">nunca te falten clientes.</span>
             </h1>
             <p className="text-lg md:text-xl text-[#184c56] max-w-2xl mx-auto mb-10 leading-relaxed">
               Haz de tu presencia digital una máquina de conversión predecible con nuestra agencia creativa.
@@ -23,7 +23,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.link/58p1sa" target="_blank" rel="noopener noreferrer">
                 <button className="px-8 py-4 bg-[#053040] text-[#ffffff] rounded-xl font-bold text-lg shadow-xl shadow-[#053040]/20 hover:scale-105 transition-transform">
-                  Agendar sesión
+                  Quiero escalar mi negocio
                 </button>
               </a>
             </div>
@@ -43,15 +43,15 @@ export default function Home() {
                 Sabes que tienes un gran mensaje, pero pasas más tiempo editando y adivinando qué publicar que cerrando clientes.
               </h2>
               <p className="mt-6 text-[#cdd7e0] text-xl italic font-light">
-                "El estancamiento agota."
+                "Pasar horas intentando entender el algoritmo o editando un video en lugar de cerrar ventas... no es rentable."
               </p>
             </FadeIn>
             <FadeIn direction="right" delay={0.2}>
               <div className="bg-[#184c56] border border-[#cdd7e0]/10 p-8 rounded-2xl relative overflow-hidden shadow-lg">
                 <CheckCircle2 className="text-[#577c8e] w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-bold mb-4 text-[#ffffff]">3+ Años de Experiencia</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#ffffff]">6+ Años de Experiencia</h3>
                 <p className="text-[#cdd7e0] leading-relaxed text-lg relative z-10">
-                  Llevamos más de 3 años descifrando los algoritmos y las redes para que tú no tengas que hacerlo. No somos solo una agencia, somos tu departamento de crecimiento.
+                  Hemos ayudado a decenas de marcas a profesionalizar su imagen y multiplicar su facturación. No somos una agencia que solo sube posts bonitos; somos tu equipo de crecimiento a la medida.
                 </p>
               </div>
             </FadeIn>
@@ -229,7 +229,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center md:text-left mb-16">
             <FadeIn>
-              <h2 className="text-4xl font-black text-[#053040] mb-6 max-w-4xl">¿Cuánto dinero y oportunidades estás perdiendo por no tener una presencia digital profesional?</h2>
+              <h2 className="text-4xl font-black text-[#053040] mb-6 max-w-4xl">¿Cuánto dinero estás perdiendo por no tener una presencia digital profesional?</h2>
             </FadeIn>
           </div>
 
@@ -318,13 +318,13 @@ export default function Home() {
         </div>
         <FadeIn>
           <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-4xl md:text-6xl font-black text-[#ffffff] mb-10 leading-tight">¿Listo para escalar sin límites?</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-[#ffffff] mb-10 leading-tight">El mercado no espera. ¿Listo para delegar y dominar tu nicho?</h2>
             <a href="https://wa.link/58p1sa" target="_blank" rel="noopener noreferrer">
               <button className="w-full sm:w-auto px-12 py-8 bg-[#ffffff] text-[#053040] text-2xl md:text-3xl font-black rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
                 Hablemos de tu negocio
               </button>
             </a>
-            <p className="mt-8 text-[#cdd7e0] font-medium">Sin compromisos. Solo una charla sobre crecimiento.</p>
+            <p className="mt-8 text-[#cdd7e0] font-medium">Sin compromisos. Solo platiquemos sobre tu negocio.</p>
           </div>
         </FadeIn>
       </section>
