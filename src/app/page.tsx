@@ -38,12 +38,12 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn direction="left">
-              <span className="text-[#577c8e] font-bold uppercase tracking-widest text-sm">El Desafío</span>
+              <span className="text-[#577c8e] font-bold uppercase tracking-widest text-sm">Tú domina tu negocio, nosotros nos encargamos del algoritmo ;)</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-4 leading-tight text-[#ffffff]">
-                Sabes que tienes un gran mensaje, pero pasas más tiempo editando y adivinando qué publicar que cerrando clientes.
+                Sabes que tienes un gran mensaje, pero pasas más tiempo adivinando qué publicar que cerrando clientes.
               </h2>
               <p className="mt-6 text-[#cdd7e0] text-xl italic font-light">
-                "Pasar horas intentando entender el algoritmo o editando un video en lugar de cerrar ventas... no es rentable."
+                ""No cuentes a la gente a la que llegas, llega a la gente que cuenta." — David Ogilvy"
               </p>
             </FadeIn>
             <FadeIn direction="right" delay={0.2}>
@@ -51,7 +51,7 @@ export default function Home() {
                 <CheckCircle2 className="text-[#577c8e] w-12 h-12 mb-4" />
                 <h3 className="text-2xl font-bold mb-4 text-[#ffffff]">6+ Años de Experiencia</h3>
                 <p className="text-[#cdd7e0] leading-relaxed text-lg relative z-10">
-                  Hemos ayudado a decenas de marcas a profesionalizar su imagen y multiplicar su facturación. No somos una agencia que solo sube posts bonitos; somos tu equipo de crecimiento a la medida.
+                  ayudando a decenas de marcas a profesionalizar su imagen y multiplicar su facturación. Somos tu equipo de crecimiento a la medida.
                 </p>
               </div>
             </FadeIn>
@@ -60,101 +60,110 @@ export default function Home() {
       </section>
 
       {/* 3. EL PLAN (SERVICIOS - RESTAURAR) */}
-      <section className="py-24 max-w-7xl mx-auto px-4 bg-[#f4efeb]">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-[#053040] mb-4">El Plan Estratégico</h2>
-            <p className="text-[#184c56] text-lg">Un ecosistema diseñado para escalar tu marca personal o comercial.</p>
+      <section className="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/fondos/fondoservicios.webp')" }}>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#053040]/80 z-0" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-black text-white mb-4">El motor de ventas que tu negocio necesita</h2>
+              <p className="text-[#cdd7e0] text-lg">Deja de publicar a ciegas y empieza a operar con estrategia. Implementamos 4 engranajes probados para que pases de perseguir prospectos a tener un sistema que los atraiga.</p>
+            </div>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            {/* 1. Producción Audiovisual */}
+            <FadeIn delay={0.1}>
+              <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
+                {/* Video de fondo */}
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
+                  src="/videosservicios/produccion.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                {/* Overlay oscuro para contraste */}
+                <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
+                {/* Contenido */}
+                <div className="relative z-10">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-180 duration-500">
+                    <PlaySquare className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Producción Audiovisual</h4>
+                  <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Dando voz e imagen a tu marca, transformando ideas en historias que se sienten, se escuchan y emocionan.</p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* 2. Creación de Páginas Web */}
+            <FadeIn delay={0.2}>
+              <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
+                  src="/videosservicios/web.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-12 duration-300">
+                    <Globe className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Creación de Páginas Web</h4>
+                  <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Para dar hogar a tu presencia digital, construyendo espacios donde la experiencia del usuario se convierta en confianza.</p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* 3. Gestión de Redes Sociales */}
+            <FadeIn delay={0.3}>
+              <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
+                  src="/videosservicios/redes.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-110 duration-300">
+                    <ListChecks className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Gestión de Redes Sociales</h4>
+                  <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Para darle vida al sistema nervioso de la empresa, asegurando que cada dato llegue a su destino con fluidez y precisión.</p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* 4. Publicidad */}
+            <FadeIn delay={0.4}>
+              <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
+                  src="/videosservicios/publicidad.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-180 duration-500">
+                    <MousePointer2 className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Publicidad</h4>
+                  <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Campañas enfocadas en la adquisición de clientes para dar impulso y alcance a tu mensaje y conectar tu propósito con las personas indicadas.</p>
+                </div>
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          <FadeIn delay={0.1}>
-            <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
-              {/* Video de fondo */}
-              <video
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
-                src="/videosservicios/produccion.webm"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              {/* Overlay oscuro para contraste */}
-              <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
-              {/* Contenido */}
-              <div className="relative z-10">
-                <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-180 duration-500">
-                  <PlaySquare className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Producción Audiovisual</h4>
-                <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Contenido visual de alto impacto optimizado para retención y viralidad.</p>
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
-              <video
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
-                src="/videosservicios/redes.webm"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
-              <div className="relative z-10">
-                <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-110 duration-300">
-                  <ListChecks className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Gestión de Redes</h4>
-                <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Estrategia y administración de comunidades para crear autoridad real.</p>
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
-              <video
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
-                src="/videosservicios/publicidad.webm"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
-              <div className="relative z-10">
-                <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-105 duration-300">
-                  <MousePointer2 className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Publicidad</h4>
-                <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Campañas de Paid Media enfocadas en ROI y adquisición de leads calificados.</p>
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.4}>
-            <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
-              <video
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
-                src="/videosservicios/web.webm"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
-              <div className="relative z-10">
-                <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-12 duration-300">
-                  <Globe className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Páginas Web</h4>
-                <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Diseño de landing pages de alta conversión que venden mientras duermes.</p>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 

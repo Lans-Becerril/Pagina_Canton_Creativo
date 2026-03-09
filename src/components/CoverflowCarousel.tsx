@@ -8,20 +8,20 @@ const testimonials = [
     {
         id: 1,
         video: "/testimonios/1.webm",
-        title: `"Aumentamos x3 su facturación en 4 meses"`,
-        type: "Caso de Éxito",
+        title: `"Que ver a otros lograrlo te motive a construir lo tuyo"`,
+        type: "Juca",
     },
     {
         id: 2,
         video: "/testimonios/2.webm",
-        title: `"Lanzamiento con +$10k en 2 semanas"`,
-        type: "Agencia Creativa",
+        title: `"Que esto sea tu plan B hasta que se convierta en tu plan A"`,
+        type: "Islas Vlogs",
     },
     {
         id: 3,
         video: "/testimonios/3.webm",
-        title: `"De 0 a Referentes en 6 meses"`,
-        type: "B2B Consulting",
+        title: `"Todos ganan, la fórmula perfecta esta en la constancia y el buen contenido"`,
+        type: "HotSpanish",
     },
 ];
 
