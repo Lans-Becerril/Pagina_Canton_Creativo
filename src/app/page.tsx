@@ -1,10 +1,52 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import { CoverflowCarousel } from "@/components/CoverflowCarousel";
-import { CheckCircle2, TrendingUp, Users, HeartHandshake, BarChart3, PlaySquare, ListChecks, MousePointer2, Globe } from "lucide-react";
+import { CheckCircle2, TrendingUp, Users, HeartHandshake, BarChart3, PlaySquare, ListChecks, MousePointer2, Globe, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  const [activeService, setActiveService] = useState<number | null>(null);
+  const [activeCase, setActiveCase] = useState<number>(0);
+
+  const SUCCESS_CASES = [
+    {
+      id: 1,
+      client: "Toshi",
+      kicker: "Caso de Éxito - E-commerce",
+      image: "/portafolio/toshi.webp",
+      problem: "Toshi tenía un gran producto pero su presencia digital no reflejaba la calidad de su marca. Las ventas estaban estancadas y la confianza del usuario era baja debido a una interfaz obsoleta.",
+      solution: "Rediseñamos toda su identidad digital y lanzamos una landing page optimizada para conversión. Implementamos una estrategia de contenido visual que conectó emocionalmente con su audiencia.",
+      results: "Aumento del 150% en ventas en los primeros 3 meses y una percepción de marca premium reconocida en su nicho.",
+      collage: [
+        { src: "/portafolio/toshi.webp", top: "10%", left: "5%", width: "45%", rotate: -3 },
+        { src: "/portafolio/tadaima.webp", top: "25%", right: "8%", width: "40%", rotate: 6 },
+        { src: "/portafolio/big.webp", bottom: "15%", left: "10%", width: "50%", rotate: -2 },
+        { src: "/portafolio/ceb.webp", top: "45%", right: "15%", width: "35%", rotate: 4 },
+        { src: "/portafolio/dot.webp", bottom: "5%", right: "5%", width: "42%", rotate: -5 },
+      ]
+    },
+    {
+      id: 2,
+      client: "Tadaima",
+      kicker: "Caso de Éxito - Brand Awareness",
+      image: "/portafolio/tadaima.webp",
+      problem: "Tadaima buscaba posicionarse como referente en su sector, pero sus redes sociales se sentían desorganizadas y sin un mensaje claro. Llegaban a mucha gente, pero no a la correcta.",
+      solution: "Establecimos un sistema de gestión de redes basado en autoridad. Creamos una narrativa visual coherente y profesional que destacó sus valores únicos.",
+      results: "Crecimiento orgánico de +50k seguidores calificados y una tasa de interacción que superó el promedio de la industria.",
+      collage: [
+        { src: "/portafolio/tadaima.webp", top: "12%", left: "8%", width: "42%", rotate: 5 },
+        { src: "/portafolio/mariscos.webp", top: "20%", right: "12%", width: "48%", rotate: -4 },
+        { src: "/portafolio/dental.webp", bottom: "18%", left: "5%", width: "44%", rotate: 3 },
+        { src: "/portafolio/marraniza.webp", top: "50%", right: "10%", width: "38%", rotate: -6 },
+        { src: "/portafolio/maxwell.webp", bottom: "10%", right: "15%", width: "40%", rotate: 7 },
+      ]
+    }
+  ];
+
   return (
     <>
       {/* 1. Hero Section */}
@@ -93,6 +135,12 @@ export default function Home() {
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Producción Audiovisual</h4>
                   <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Dando voz e imagen a tu marca, transformando ideas en historias que se sienten, se escuchan y emocionan.</p>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setActiveService(0); }}
+                    className="mt-4 px-6 py-2 bg-transparent border border-[#053040]/30 text-[#053040] group-hover:border-white/50 group-hover:text-white rounded-full hover:bg-white hover:text-[#053040] transition-all font-bold text-sm"
+                  >
+                    Ver más
+                  </button>
                 </div>
               </div>
             </FadeIn>
@@ -115,6 +163,12 @@ export default function Home() {
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Creación de Páginas Web</h4>
                   <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Para dar hogar a tu presencia digital, construyendo espacios donde la experiencia del usuario se convierta en confianza.</p>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setActiveService(1); }}
+                    className="mt-4 px-6 py-2 bg-transparent border border-[#053040]/30 text-[#053040] group-hover:border-white/50 group-hover:text-white rounded-full hover:bg-white hover:text-[#053040] transition-all font-bold text-sm"
+                  >
+                    Ver más
+                  </button>
                 </div>
               </div>
             </FadeIn>
@@ -132,11 +186,17 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
                 <div className="relative z-10">
-                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-[360deg] duration-300">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-110 duration-300">
                     <ListChecks className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Gestión de Redes Sociales</h4>
                   <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Para darle vida al sistema nervioso de la empresa, asegurando que cada dato llegue a su destino con fluidez y precisión.</p>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setActiveService(2); }}
+                    className="mt-4 px-6 py-2 bg-transparent border border-[#053040]/30 text-[#053040] group-hover:border-white/50 group-hover:text-white rounded-full hover:bg-white hover:text-[#053040] transition-all font-bold text-sm"
+                  >
+                    Ver más
+                  </button>
                 </div>
               </div>
             </FadeIn>
@@ -159,6 +219,12 @@ export default function Home() {
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Publicidad</h4>
                   <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Campañas enfocadas en la adquisición de clientes para dar impulso y alcance a tu mensaje y conectar tu propósito con las personas indicadas.</p>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setActiveService(3); }}
+                    className="mt-4 px-6 py-2 bg-transparent border border-[#053040]/30 text-[#053040] group-hover:border-white/50 group-hover:text-white rounded-full hover:bg-white hover:text-[#053040] transition-all font-bold text-sm"
+                  >
+                    Ver más
+                  </button>
                 </div>
               </div>
             </FadeIn>
@@ -336,6 +402,146 @@ export default function Home() {
           </div>
         </FadeIn>
       </section>
+      {/* Modal Interactivo de Servicios */}
+      <AnimatePresence>
+        {activeService !== null && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActiveService(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+
+            {/* Modal Container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-6xl h-[85vh] bg-[#053040] rounded-[2.5rem] overflow-hidden shadow-2xl z-10 border border-white/10"
+              style={{
+                backgroundImage: "url('/fondos/modal-bg-1.webp')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setActiveService(null)}
+                className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-50 backdrop-blur-md border border-white/20"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+                {/* Columna Izquierda: Collage Asimétrico */}
+                <div className="relative h-[40vh] lg:h-full bg-gradient-to-br from-black/40 to-transparent p-8 overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {/* Background decorative text/element */}
+                    <span className="text-[12rem] font-black text-white/5 select-none pointer-events-none">RESULTADOS</span>
+                  </div>
+
+                  {SUCCESS_CASES[activeCase % SUCCESS_CASES.length].collage.map((img, i) => (
+                    <motion.div
+                      key={i}
+                      style={{
+                        position: 'absolute',
+                        top: img.top,
+                        left: img.left,
+                        right: img.right,
+                        bottom: img.bottom,
+                        width: img.width,
+                        rotate: img.rotate,
+                        zIndex: 10 + i
+                      }}
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{
+                        duration: 4 + i,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.5
+                      }}
+                      className="group cursor-pointer rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10"
+                      whileHover={{ scale: 1.1, zIndex: 50, rotate: 0 }}
+                      onClick={() => setActiveCase(i % SUCCESS_CASES.length)}
+                    >
+                      <div className="relative aspect-[4/3] w-full">
+                        <img
+                          src={img.src}
+                          alt="Caso de éxito"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-[#053040]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="text-white font-bold text-sm tracking-widest uppercase">Más info.</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Columna Derecha: StoryBrand Text */}
+                <div className="relative h-full flex flex-col justify-center p-8 lg:p-16 bg-white/95 backdrop-blur-xl">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeCase}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.4 }}
+                      className="max-w-md"
+                    >
+                      <span className="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-widest uppercase bg-[#577c8e]/10 text-[#577c8e] rounded-full">
+                        {SUCCESS_CASES[activeCase % SUCCESS_CASES.length].kicker}
+                      </span>
+                      <h3 className="text-4xl lg:text-5xl font-black text-[#053040] mb-8 leading-tight">
+                        {SUCCESS_CASES[activeCase % SUCCESS_CASES.length].client}
+                      </h3>
+
+                      <div className="space-y-8">
+                        <div>
+                          <h4 className="flex items-center gap-2 text-[#577c8e] font-bold uppercase tracking-widest text-xs mb-3">
+                            <span className="w-8 h-[2px] bg-[#577c8e]"></span>
+                            El Problema
+                          </h4>
+                          <p className="text-[#184c56] text-lg leading-relaxed font-medium italic">
+                            "{SUCCESS_CASES[activeCase % SUCCESS_CASES.length].problem}"
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="flex items-center gap-2 text-[#053040] font-bold uppercase tracking-widest text-xs mb-3">
+                            <span className="w-8 h-[2px] bg-[#053040]"></span>
+                            La Solución y Resultados
+                          </h4>
+                          <p className="text-[#184c56] text-lg leading-relaxed">
+                            {SUCCESS_CASES[activeCase % SUCCESS_CASES.length].solution}
+                          </p>
+                          <div className="mt-6 p-6 bg-[#053040] rounded-2xl shadow-xl shadow-[#053040]/10">
+                            <p className="text-white font-black text-xl leading-tight">
+                              {SUCCESS_CASES[activeCase % SUCCESS_CASES.length].results}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-12 flex items-center gap-4">
+                        <a href="https://wa.link/58p1sa" target="_blank" rel="noopener noreferrer" className="flex-1">
+                          <button className="w-full py-4 bg-[#053040] text-white rounded-xl font-black text-lg shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+                            Quiero resultados así
+                          </button>
+                        </a>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
