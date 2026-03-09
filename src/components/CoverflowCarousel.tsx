@@ -144,7 +144,7 @@ export function CoverflowCarousel() {
                                                 transition={{ delay: 0.2 }}
                                                 className="absolute bottom-6 left-6 right-6 text-white text-left z-20"
                                             >
-                                                <p className="font-black text-xl leading-tight">{item.title}</p>
+                                                <p className="font-black text-base italic leading-tight">{item.title}</p>
                                                 <div className="flex items-center gap-2 mt-2">
                                                     <span className="w-2 h-2 bg-accent-blue rounded-full"></span>
                                                     <span className="text-xs font-bold uppercase tracking-wider">{item.type}</span>

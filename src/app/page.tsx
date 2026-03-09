@@ -18,7 +18,7 @@ export default function Home() {
               Tú lidera tu negocio, nosotros nos encargamos de que <span className="text-[#577c8e]">nunca te falten clientes.</span>
             </h1>
             <p className="text-lg md:text-xl text-[#184c56] max-w-2xl mx-auto mb-10 leading-relaxed">
-              Haz de tu presencia digital una máquina de conversión predecible con nuestra agencia creativa.
+              Haz de tu presencia digital una máquina de conversión con la creatividad de nuestra agencia.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.link/58p1sa" target="_blank" rel="noopener noreferrer">
@@ -49,7 +49,7 @@ export default function Home() {
             <FadeIn direction="right" delay={0.2}>
               <div className="bg-[#184c56] border border-[#cdd7e0]/10 p-8 rounded-2xl relative overflow-hidden shadow-lg">
                 <CheckCircle2 className="text-[#577c8e] w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-bold mb-4 text-[#ffffff]">6+ Años de Experiencia</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#ffffff]">6+ Años de experiencia...</h3>
                 <p className="text-[#cdd7e0] leading-relaxed text-lg relative z-10">
                   ayudando a decenas de marcas a profesionalizar su imagen y multiplicar su facturación. Somos tu equipo de crecimiento a la medida.
                 </p>
@@ -61,14 +61,13 @@ export default function Home() {
 
       {/* 3. EL PLAN (SERVICIOS - RESTAURAR) */}
       <section className="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/fondos/fondoservicios.webp')" }}>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[#053040]/80 z-0" />
+
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-black text-white mb-4">El motor de ventas que tu negocio necesita</h2>
-              <p className="text-[#cdd7e0] text-lg">Deja de publicar a ciegas y empieza a operar con estrategia. Implementamos 4 engranajes probados para que pases de perseguir prospectos a tener un sistema que los atraiga.</p>
+              <h2 className="text-4xl font-black text-[#053040] drop-shadow-lg mb-4">El motor de ventas que tu negocio necesita</h2>
+              <p className="text-black text-lg font-medium drop-shadow-md">Deja de publicar a ciegas y empieza a operar con estrategia. Implementamos 4 engranajes probados para que pases de perseguir prospectos a tener un sistema que los atraiga.</p>
             </div>
           </FadeIn>
 
@@ -89,7 +88,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
                 {/* Contenido */}
                 <div className="relative z-10">
-                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-180 duration-500">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-[360deg] duration-500">
                     <PlaySquare className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Producción Audiovisual</h4>
@@ -111,7 +110,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
                 <div className="relative z-10">
-                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-12 duration-300">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-110 duration-300">
                     <Globe className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Creación de Páginas Web</h4>
@@ -133,7 +132,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
                 <div className="relative z-10">
-                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-110 duration-300">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-[360deg] duration-300">
                     <ListChecks className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Gestión de Redes Sociales</h4>
@@ -155,7 +154,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
                 <div className="relative z-10">
-                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-180 duration-500">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-[360deg] duration-500">
                     <MousePointer2 className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Publicidad</h4>
@@ -187,8 +186,8 @@ export default function Home() {
         <div className="relative z-10">
           <FadeIn>
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Empresas que confían en nosotros</h2>
-              <p className="text-[#cdd7e0] text-lg">Marcas que han escalado con Cantón Creativo.</p>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Empresas que han confiado en el Cantón</h2>
+              <p className="text-[#cdd7e0] text-lg">y han escalado sus resultados con nosotros.</p>
             </div>
           </FadeIn>
 
