@@ -5,7 +5,7 @@ export function middleware(req: NextRequest) {
     const authHeader = req.headers.get('authorization');
 
     if (!authHeader) {
-        return new NextResponse('Auth Required.', {
+        return new NextResponse('Auth required', {
             status: 401,
             headers: {
                 'WWW-Authenticate': 'Basic realm="Secure Area"',
@@ -17,11 +17,11 @@ export function middleware(req: NextRequest) {
     const [user, pwd] = Buffer.from(auth, 'base64').toString().split(':');
 
     // Credenciales temporales configuradas por el usuario
-    if (user === 'nigga' && pwd === 'canton2026') {
+    if (user === 'admin' && pwd === 'canton2026') {
         return NextResponse.next();
     }
 
-    return new NextResponse('Auth Required.', {
+    return new NextResponse('Auth required', {
         status: 401,
         headers: {
             'WWW-Authenticate': 'Basic realm="Secure Area"',
