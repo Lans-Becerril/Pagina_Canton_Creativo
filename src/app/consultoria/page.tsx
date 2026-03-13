@@ -1,10 +1,40 @@
+"use client";
+
+import { useState } from "react";
+import { supabase } from "@/lib/supabase";
 import { FadeIn } from "@/components/FadeIn";
 import { CheckCircle2, PlayCircle, Lightbulb, CalendarDays, Clock, Palette, ListChecks, Award, ChevronDown, Scale, Camera, Mail } from "lucide-react";
 import Link from "next/link";
+import { CourseCarousel } from "@/components/CourseCarousel";
 
 export default function ConsultoriaPage() {
     const stripeLink1900 = "https://buy.stripe.com/5kQeVd3h6bPi3kSfNegrS03";
     const stripeLink10600 = "https://buy.stripe.com/7sY4gzaJy9Ha5t07gIgrS04";
+
+    const [phone, setPhone] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setIsSuccess(false);
+
+        try {
+            const { error } = await supabase
+                .from('leads diagnostico gratis')
+                .insert([{ phone }]);
+
+            if (error) throw error;
+
+            setIsSuccess(true);
+            setPhone("");
+        } catch (error) {
+            console.error("Error inserting lead:", error);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <>
@@ -68,16 +98,29 @@ export default function ConsultoriaPage() {
                             <div className="md:w-1/2 w-full">
                                 <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
                                     <h3 className="text-xl font-bold mb-4">Descubre qué está frenando tus vistas</h3>
-                                    <form className="space-y-4">
+                                    <form onSubmit={handleSubmit} className="space-y-4">
                                         <input
-                                            className="w-full px-4 py-3 rounded-lg border-soft-blue focus:ring-primary focus:border-primary bg-white"
-                                            placeholder="¿A dónde te enviamos los resultados?"
-                                            type="email"
+                                            className="w-full px-4 py-3 rounded-lg border-soft-blue focus:ring-primary focus:border-primary bg-white text-slate-800"
+                                            placeholder="¿A que teléfono te enviamos los resultados?"
+                                            type="tel"
                                             required
+                                            pattern="[0-9]{10}"
+                                            value={phone}
+                                            onChange={(e) => setPhone(e.target.value)}
+                                            disabled={isSubmitting}
                                         />
-                                        <button type="button" className="w-full bg-accent-teal text-white font-bold py-3 rounded-lg hover:bg-primary transition-colors">
-                                            QUIERO MI DIAGNÓSTICO GRATIS
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full bg-accent-teal text-white font-bold py-3 rounded-lg hover:bg-primary transition-colors disabled:opacity-75 disabled:cursor-not-allowed"
+                                        >
+                                            {isSubmitting ? "Enviando..." : "QUIERO MI DIAGNÓSTICO GRATIS"}
                                         </button>
+                                        {isSuccess && (
+                                            <p className="text-center text-teal-600 font-bold mt-2">
+                                                ¡Listo! Te contactaremos pronto
+                                            </p>
+                                        )}
                                     </form>
                                 </div>
                             </div>
@@ -88,64 +131,16 @@ export default function ConsultoriaPage() {
 
             {/* Core Offer Section */}
             <section className="py-24 bg-white" id="options">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-                    <FadeIn>
-                        <h2 className="text-4xl font-extrabold text-primary mb-4">El camino al crecimiento real</h2>
-                        <p className="text-slate-600 max-w-2xl mx-auto">
-                            Selecciona el nivel de acompañamiento que necesitas para transformar tu canal de YouTube.
-                        </p>
-                    </FadeIn>
-                </div>
-
-                {/* Tripwires (Cursos Individuales) */}
+                {/* Tripwires (Cursos Individuales) - Course Carousel */}
                 <div className="max-w-7xl mx-auto px-4 mb-24">
                     <FadeIn>
-                        <h3 className="text-2xl font-bold text-center mb-10 text-primary">Cursos individuales</h3>
+                        <h3 className="text-2xl font-bold text-center mb-10 text-primary">Checa todas nuestras Masterclass</h3>
                     </FadeIn>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <FadeIn delay={0.1}>
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
-                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
-                                    <Clock />
-                                </div>
-                                <h4 className="text-xl font-bold mb-2">Hora extra de asesoría</h4>
-                                <p className="text-slate-500 mb-6 text-sm">¿Sientes que 60 min no son suficientes? Añade tiempo para profundizar.</p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-lg font-bold text-primary">$1,000 MXN</span>
-                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
-                                </div>
-                            </div>
-                        </FadeIn>
-                        <FadeIn delay={0.2}>
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
-                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
-                                    <Palette />
-                                </div>
-                                <h4 className="text-xl font-bold mb-2">Kit de Miniaturas Pro</h4>
-                                <p className="text-slate-500 mb-6 text-sm">3 plantillas editables para aumentar tu CTR inmediatamente.</p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-lg font-bold text-primary">$850 MXN</span>
-                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
-                                </div>
-                            </div>
-                        </FadeIn>
-                        <FadeIn delay={0.3}>
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-soft-blue/20 hover:border-accent-blue/50 transition-colors group h-full flex flex-col">
-                                <div className="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center text-accent-blue mb-6 group-hover:bg-accent-blue group-hover:text-white transition-colors">
-                                    <ListChecks />
-                                </div>
-                                <h4 className="text-xl font-bold mb-2">Script Checklist</h4>
-                                <p className="text-slate-500 mb-6 text-sm">La estructura exacta para retener a tu audiencia en cada video.</p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-lg font-bold text-primary">$450 MXN</span>
-                                    <button className="text-accent-teal font-bold hover:underline">Añadir +</button>
-                                </div>
-                            </div>
-                        </FadeIn>
-                    </div>
+                    <CourseCarousel />
                 </div>
 
                 {/* Llamada de asesoría (Consultoría 1 a 1) */}
+                <h2 className="text-3xl md:text-4xl font-black text-[#053040] text-center mb-10">O si prefieres atención personalizada</h2>
                 <div className="max-w-4xl mx-auto px-4">
                     <FadeIn delay={0.2}>
                         <div className="relative bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-soft-blue/20 ring-4 ring-primary/5">
@@ -156,11 +151,11 @@ export default function ConsultoriaPage() {
                                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
                                     <div>
                                         <h3 className="text-3xl font-bold text-primary">Llamada de asesoría (60 min)</h3>
-                                        <p className="text-accent-blue font-medium mt-1 uppercase tracking-wider">Sesión estratégica 1-a-1</p>
+                                        <p className="text-accent-blue font-medium mt-1 uppercase tracking-wider">Sesión estratégica 1 a 1</p>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-4xl font-black text-primary">$1,900 MXN</div>
-                                        <div className="text-slate-500 font-medium">($120 USD aprox.)</div>
+                                        <div className="text-4xl font-black text-primary">$1,600 MXN</div>
+                                        <div className="text-slate-500 font-medium">(-20% de descuento reservando hoy)</div>
                                     </div>
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-8 mb-10">
@@ -185,16 +180,19 @@ export default function ConsultoriaPage() {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="bg-primary/5 rounded-xl p-4 text-center mb-8 border border-primary/10">
-                                    <p className="text-primary font-bold text-lg">
-                                        "¡Al finalizar tendrás tu canal listo para crecer sin parar!"
-                                    </p>
+                                
+                                <div className="max-w-md mx-auto flex flex-col items-center text-center w-full md:w-1/2">
+                                    <div className="bg-primary/5 rounded-xl p-4 text-center mb-8 border border-primary/10 w-full">
+                                        <p className="text-primary font-bold text-lg">
+                                            ¡Al finalizar tendrás tu canal listo para crecer sin parar!
+                                        </p>
+                                    </div>
+                                    <Link href={stripeLink1900} target="_blank" className="w-full">
+                                        <button className="w-full bg-primary text-white py-5 rounded-2xl text-xl font-bold hover:bg-black transition-all shadow-lg flex items-center justify-center gap-3">
+                                            RESERVAR MI SESIÓN <CalendarDays />
+                                        </button>
+                                    </Link>
                                 </div>
-                                <Link href={stripeLink1900} target="_blank">
-                                    <button className="w-full bg-primary text-white py-5 rounded-2xl text-xl font-bold hover:bg-black transition-all shadow-lg flex items-center justify-center gap-3">
-                                        RESERVAR MI SESIÓN <CalendarDays />
-                                    </button>
-                                </Link>
                             </div>
                         </div>
                     </FadeIn>
@@ -212,27 +210,27 @@ export default function ConsultoriaPage() {
                                     <div className="inline-block bg-yellow-400 text-primary px-4 py-1 rounded-full text-xs font-black uppercase mb-6 tracking-widest">
                                         Oferta Exclusiva
                                     </div>
-                                    <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Paquete Llamada + Curso Intensivo '0 a 100,000 subs'</h2>
+                                    <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Curso Intensivo '0 a 100,000 subs' + Llamada de asesoría</h2>
                                     <p className="text-lg text-slate-300 mb-8 leading-relaxed">
                                         Ahorra más del 20% al contratar la asesoría junto con nuestro curso completo. Domina el algoritmo, la edición y la monetización de un solo golpe.
                                     </p>
                                     <div className="flex items-center gap-4 mb-8">
                                         <div className="bg-white/10 p-4 rounded-xl flex items-center gap-3">
                                             <Award className="text-yellow-400" />
-                                            <span className="font-bold">Bono si reservas HOY</span>
+                                            <span className="font-bold">Te bonificamos el costo de la llamada si reservas HOY</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bg-white rounded-3xl p-10 text-primary text-center">
                                     <div className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">Inversión Total</div>
-                                    <div className="text-5xl font-black mb-2">$10,600 MXN</div>
-                                    <div className="text-lg text-slate-500 mb-8">($620 USD aprox.)</div>
+                                    <div className="text-5xl font-black mb-2">$11,500 MXN</div>
+                                    <div className="text-lg text-slate-500 mb-8">(Bono por $1,600 de descuento reservando hoy)</div>
                                     <Link href={stripeLink10600} target="_blank">
                                         <button className="w-full bg-primary text-white py-5 rounded-2xl text-xl font-bold hover:scale-105 transition-transform shadow-xl mb-4">
                                             ¡SÍ, QUIERO EL PAQUETE!
                                         </button>
                                     </Link>
-                                    <p className="text-xs text-slate-400 font-medium mt-2">Pago seguro procesado por Stripe</p>
+                                    <p className="text-xs text-slate-400 font-medium mt-2">Pago seguro procesado por Stripe.</p>
                                 </div>
                             </div>
                         </div>
@@ -268,12 +266,7 @@ export default function ConsultoriaPage() {
             <section className="py-24 bg-soft-blue/20">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <FadeIn>
-                        <h2 className="text-3xl font-bold text-primary mb-8">¿Cuánto te cuesta seguir igual?</h2>
-                        <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                            <p>Cada semana que pasas subiendo videos sin una estrategia es <strong>tiempo que nunca recuperarás.</strong></p>
-                            <p>Imagina seguir otros 6 meses invirtiendo horas de edición para solo 100 vistas. La frustración y el cansancio son reales, y están matando tu potencial creativo.</p>
-                            <p className="text-primary font-bold text-2xl">Deja de quemar tu tiempo y empieza a construir tu audiencia hoy.</p>
-                        </div>
+                        <h2 className="text-3xl font-bold text-primary mb-8">Así que, deja de quemar tu tiempo y empieza a construir un canal de verdad hoy.</h2>
                     </FadeIn>
                 </div>
             </section>

@@ -1,17 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Facebook, Instagram, Youtube, Mail } from "lucide-react";
 
 export function Footer() {
+    const pathname = usePathname();
     const logoUrl = "https://instagram.ftlc1-1.fna.fbcdn.net/v/t51.2885-19/408494258_3579481412368859_6886822701382280032_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDA3LmMyIn0&_nc_ht=instagram.ftlc1-1.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2QEbhJZkD-NGVeW5WXgpOCLoMKElh5rA1RWaDNeE6PtDnl1d0qFZD2EAAcvlXoHv7Ca_TDaXse24QBcNuW1dL6s9&_nc_ohc=M5AghAHp-MgQ7kNvwEfGNYq&_nc_gid=fqH2plwFzshSGMyx4de2rQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afxq1M-D7IS2YpgW0x1tjkErcjGZ5PfW_dLJ-Rd2Pk_uSw&oe=69AE943D&_nc_sid=7a9f4b";
+
+    if (pathname.startsWith("/cursos/")) {
+        return null;
+    }
 
     return (
         <footer className="bg-[#053040] text-[#ffffff] py-16 border-t border-[#184c56]">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
                     {/* Columna 1: Marca */}
-                    <div className="flex flex-col items-start">
-                        <Link href="/" className="mb-6 flex items-center gap-3">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col items-center text-center w-full">
+                        <Link href="/" className="mb-6 flex items-center justify-center gap-3">
                             <Image
                                 src="/logo-canton.png"
                                 alt="Cantón Creativo Logo"
@@ -21,12 +29,15 @@ export function Footer() {
                             />
                         </Link>
                         <p className="text-[#cdd7e0] text-sm leading-relaxed max-w-xs">
-                            Transformamos tu presencia digital en una máquina de conversión predecible.
+                            Agencia de producción audiovisual, Creación de páginas web, Gestión de redes sociales y Publicidad.
+                            <i className="block mt-4 text-[#93a9bf]">
+                                "Siempre al tiro, siempre Creativo"
+                            </i>
                         </p>
                     </div>
 
                     {/* Columna 2: Navegación */}
-                    <div className="flex flex-col items-start">
+                    <div className="col-span-1 flex flex-col items-center text-center w-full">
                         <h4 className="font-bold text-lg mb-6 text-[#ffffff]">Navegación</h4>
                         <nav className="flex flex-col gap-4 text-sm text-[#cdd7e0]">
                             <Link href="/" className="hover:text-[#577c8e] transition-colors">Agencia</Link>
@@ -37,7 +48,7 @@ export function Footer() {
                     </div>
 
                     {/* Columna 3: Legal y Contacto */}
-                    <div className="flex flex-col items-start">
+                    <div className="col-span-1 flex flex-col items-center text-center w-full">
                         <h4 className="font-bold text-lg mb-6 text-[#ffffff]">Legal y Contacto</h4>
                         <div className="flex flex-col gap-4 text-sm text-[#cdd7e0]">
                             <Link href="/politica-privacidad" className="hover:text-[#577c8e] transition-colors">Política de Privacidad</Link>
@@ -50,7 +61,7 @@ export function Footer() {
                     </div>
 
                     {/* Columna 4: Sociales */}
-                    <div className="flex flex-col items-start">
+                    <div className="col-span-2 lg:col-span-1 flex flex-col items-center text-center w-full">
                         <h4 className="font-bold text-lg mb-6 text-[#ffffff]">Síguenos</h4>
                         <div className="flex items-center gap-5 text-[#cdd7e0]">
                             <a href="https://www.instagram.com/cantoncreativo/" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="Instagram">
