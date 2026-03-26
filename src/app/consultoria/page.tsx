@@ -11,6 +11,7 @@ export default function ConsultoriaPage() {
     const stripeLink1900 = "https://buy.stripe.com/5kQeVd3h6bPi3kSfNegrS03";
     const stripeLink10600 = "https://buy.stripe.com/7sY4gzaJy9Ha5t07gIgrS04";
 
+    const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -23,11 +24,12 @@ export default function ConsultoriaPage() {
         try {
             const { error } = await supabase
                 .from('leads diagnostico gratis')
-                .insert([{ phone }]);
+                .insert([{ name, phone }]);
 
             if (error) throw error;
 
             setIsSuccess(true);
+            setName("");
             setPhone("");
         } catch (error) {
             console.error("Error inserting lead:", error);
@@ -101,6 +103,15 @@ export default function ConsultoriaPage() {
                                     <form onSubmit={handleSubmit} className="space-y-4">
                                         <input
                                             className="w-full px-4 py-3 rounded-lg border-soft-blue focus:ring-primary focus:border-primary bg-white text-slate-800"
+                                            placeholder="¿Con quién estamos hablando?"
+                                            type="text"
+                                            required
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            disabled={isSubmitting}
+                                        />
+                                        <input
+                                            className="w-full px-4 py-3 rounded-lg border-soft-blue focus:ring-primary focus:border-primary bg-white text-slate-800"
                                             placeholder="¿A que teléfono te enviamos los resultados?"
                                             type="tel"
                                             required
@@ -131,13 +142,15 @@ export default function ConsultoriaPage() {
 
             {/* Core Offer Section */}
             <section className="py-24 bg-white" id="options">
-                {/* Tripwires (Cursos Individuales) - Course Carousel */}
+                {/* Tripwires (Cursos Individuales) - Course Carousel - TEMPORALMENTE OCULTO */}
+                {/* 
                 <div className="max-w-7xl mx-auto px-4 mb-24">
                     <FadeIn>
                         <h3 className="text-2xl font-bold text-center mb-10 text-primary">Checa todas nuestras Masterclass</h3>
                     </FadeIn>
                     <CourseCarousel />
                 </div>
+                */}
 
                 {/* Llamada de asesoría (Consultoría 1 a 1) */}
                 <h2 className="text-3xl md:text-4xl font-black text-[#053040] text-center mb-10">O si prefieres atención personalizada</h2>
@@ -180,7 +193,7 @@ export default function ConsultoriaPage() {
                                         </li>
                                     </ul>
                                 </div>
-                                
+
                                 <div className="max-w-md mx-auto flex flex-col items-center text-center w-full md:w-1/2">
                                     <div className="bg-primary/5 rounded-xl p-4 text-center mb-8 border border-primary/10 w-full">
                                         <p className="text-primary font-bold text-lg">
@@ -243,7 +256,7 @@ export default function ConsultoriaPage() {
                 <div className="max-w-7xl mx-auto px-4">
                     <FadeIn>
                         <h2 className="text-4xl font-extrabold text-primary text-center mb-16 underline decoration-accent-blue decoration-4 underline-offset-8">
-                            Conoce los resultados que nuestros alumnos han obtenido
+                            Canales en los que hemos usado este método
                         </h2>
                     </FadeIn>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

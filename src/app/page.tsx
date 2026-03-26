@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import { CoverflowCarousel } from "@/components/CoverflowCarousel";
-import { CheckCircle2, TrendingUp, Users, HeartHandshake, BarChart3, PlaySquare, ListChecks, MousePointer2, Globe, X } from "lucide-react";
+import { CheckCircle2, TrendingUp, Users, HeartHandshake, BarChart3, PlaySquare, ListChecks, MousePointer2, Globe, X, ImagePlus, Film } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,6 +34,9 @@ export default function Home() {
       document.body.style.overflow = "unset";
     };
   }, [activeService]);
+
+  // Helper: servicios que usan video como medio principal
+  const isVideoService = (sIdx: number) => [0, 5].includes(sIdx);
 
   const SERVICES_DATA = [
     {
@@ -75,7 +78,40 @@ export default function Home() {
         { client: "Local Boom", kicker: "Ads - Local", media: "/portafolio/mariscos.webp", problem: "Poca afluencia de clientes entre semana.", solution: "Anuncios geolocalizados con ofertas relámpago.", results: "Local lleno todos los días." },
         { client: "Full Conversion", kicker: "E-comm Ads", media: "/portafolio/maxwell.webp", problem: "Carritos abandonados sin una estrategia de recuperación.", solution: "Campañas de remarketing con cupones personalizados.", results: "Recuperación del 20% de carritos." },
       ]
+    },
+    {
+      title: "Creación de Miniaturas",
+      cases: [
+        { client: "TechTuber MX", kicker: "Thumbnail - Tech", media: "/portafolio/toshi.webp", problem: "CTR debajo del 3% pese a contenido de calidad.", solution: "Diseño de miniaturas con psicología del color y A/B testing.", results: "CTR promedio de 9.2% en 30 días." },
+        { client: "CocinaFit", kicker: "Thumbnail - Food", media: "/portafolio/marraniza.webp", problem: "Sus recetas no destacaban entre la competencia visual.", solution: "Miniaturas con estilo foodie viral: close-ups, texturas y tipografías bold.", results: "+120% de impresiones orgánicas." },
+        { client: "GamerPro", kicker: "Thumbnail - Gaming", media: "/portafolio/big.webp", problem: "Canal estancado en 10k suscriptores por falta de identidad visual.", solution: "Sistema de miniaturas con personaje ilustrado y paleta consistente.", results: "De 10k a 45k subs en 4 meses." },
+        { client: "FinanzasYa", kicker: "Thumbnail - Finance", media: "/portafolio/maxwell.webp", problem: "Contenido valioso pero imagen poco profesional.", solution: "Branding visual premium con elementos de data viz y confianza.", results: "Patrocinios de marcas financieras." },
+        { client: "VlogMéxico", kicker: "Thumbnail - Vlog", media: "/portafolio/tadaima.webp", problem: "Videos de viaje con vistas espectaculares pero miniaturas genéricas.", solution: "Composiciones cinemáticas con overlays de texto emocional.", results: "Video viral de 500k views." },
+      ]
+    },
+    {
+      title: "Edición de Alta Retención",
+      cases: [
+        { client: "PodcastMX", kicker: "Retención - Podcast", media: "/videosservicios/produccion.webm", problem: "Retención promedio del 20% en videos largos de podcast.", solution: "Edición dinámica con cortes rápidos, zooms, subtítulos animados y B-roll.", results: "Retención promedio al 55%." },
+        { client: "EduCreator", kicker: "Retención - Edu", media: "/videosservicios/produccion.webm", problem: "Tutoriales de 15 min que perdían al espectador al minuto 3.", solution: "Estructura para retención, motion graphics y ganchos visuales.", results: "Duración promedio de vista: 11 min." },
+        { client: "CoachDigital", kicker: "Retención - Coach", media: "/videosservicios/produccion.webm", problem: "Videos de mentoría monótonos que no generaban engagement.", solution: "Storytelling visual con memes, efectos de sonido y cámara dinámica.", results: "+300% en comentarios." },
+        { client: "FitnessPro", kicker: "Retención - Fitness", media: "/videosservicios/produccion.webm", problem: "Rutinas de ejercicio que el algoritmo no recomendaba.", solution: "Edición estilo MrBeast: countdowns, retos visuales y música épica.", results: "3 videos en Trending México." },
+        { client: "ReviewTech", kicker: "Retención - Reviews", media: "/videosservicios/produccion.webm", problem: "Reviews extensas con alto porcentaje de abandono.", solution: "Segmentación en capítulos con intros enganchantes y comparativas animadas.", results: "Watch time +180%." },
+      ]
     }
+  ];
+
+  const CLIENT_LOGOS: { id: number; src: string; url: string }[] = [
+    { id: 1, src: "/logos/logo-1.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 2, src: "/logos/logo-2.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 3, src: "/logos/logo-3.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 4, src: "/logos/logo-4.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 5, src: "/logos/logo-5.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 6, src: "/logos/logo-6.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 7, src: "/logos/logo-7.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 8, src: "/logos/logo-8.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 9, src: "/logos/logo-9.svg", url: "https://instagram.com/cantoncreativo/" },
+    { id: 10, src: "/logos/logo-10.svg", url: "https://instagram.com/cantoncreativo/" },
   ];
 
   const COLLAGE_COORDS = [
@@ -159,11 +195,11 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-4xl font-black text-[#053040] mb-4">El motor de ventas que tu negocio necesita</h2>
-              <p className="text-black text-lg font-medium">Deja de publicar a ciegas y empieza a operar con estrategia. Implementamos 4 engranajes probados para que pases de perseguir prospectos a tener un sistema que los atraiga.</p>
+              <p className="text-black text-lg font-medium">Deja de publicar a ciegas y empieza a operar con estrategia. Implementamos 6 engranajes probados para que pases de perseguir prospectos a tener un sistema que los atraiga.</p>
             </div>
           </FadeIn>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
             {/* 1. Producción Audiovisual */}
             <FadeIn delay={0.1}>
               <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
@@ -278,6 +314,62 @@ export default function Home() {
                 </div>
               </div>
             </FadeIn>
+
+            {/* 5. Creación de Miniaturas */}
+            <FadeIn delay={0.5}>
+              <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
+                  src="/videosservicios/produccion.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:scale-110 duration-300">
+                    <ImagePlus className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Creación de Miniaturas</h4>
+                  <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Miniaturas que disparan tu CTR. Diseño psicológico, A/B testing y branding visual para que cada video sea irresistible al clic.</p>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setActiveService(4); }}
+                    className="cursor-pointer mt-4 px-6 py-2 bg-transparent border border-[#053040]/30 text-[#053040] group-hover:border-white/50 group-hover:text-white rounded-full hover:bg-white hover:text-[#053040] transition-all font-bold text-sm"
+                  >
+                    Ver más
+                  </button>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* 6. Edición de Alta Retención */}
+            <FadeIn delay={0.6}>
+              <div className="relative overflow-hidden bg-[#ffffff] group-hover:bg-[#053040] p-8 rounded-2xl shadow-sm border border-[#cdd7e0]/20 hover:border-[#577c8e] transition-all duration-500 group h-full">
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-40 transition-opacity duration-500 ease-in-out"
+                  src="/videosservicios/produccion.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-[#053040] opacity-0 group-hover:opacity-50 transition-opacity duration-500 ease-in-out rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="mx-auto w-14 h-14 bg-[#f4efeb] group-hover:bg-[#577c8e] flex items-center justify-center rounded-xl mb-6 transition-all transform group-hover:-translate-y-2 group-hover:rotate-[360deg] duration-500">
+                    <Film className="text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-[#053040] group-hover:text-[#ffffff] transition-colors duration-300">Edición de Alta Retención</h4>
+                  <p className="text-[#184c56] group-hover:text-[#cdd7e0] text-sm leading-relaxed transition-colors duration-300">Edición especializada para YouTube: cortes dinámicos, zooms, subtítulos animados y ganchos visuales que mantienen al espectador pegado.</p>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setActiveService(5); }}
+                    className="cursor-pointer mt-4 px-6 py-2 bg-transparent border border-[#053040]/30 text-[#053040] group-hover:border-white/50 group-hover:text-white rounded-full hover:bg-white hover:text-[#053040] transition-all font-bold text-sm"
+                  >
+                    Ver más
+                  </button>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -302,7 +394,7 @@ export default function Home() {
         <div className="relative z-10">
           <FadeIn>
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Empresas que han confiado en el Cantón...</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Empresas que han confiado en Cantón...</h2>
               <p className="text-[#cdd7e0] text-lg">y han escalado sus resultados con nosotros.</p>
             </div>
           </FadeIn>
@@ -318,30 +410,42 @@ export default function Home() {
               className="flex items-center gap-12 animate-[marquee-scroll_var(--marquee-duration)_linear_infinite] hover:[--marquee-duration:50s] transition-[--marquee-duration] duration-500 ease-in-out w-max px-12"
               style={{ "--marquee-duration": "25s" } as React.CSSProperties}
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                <div
-                  key={n}
-                  className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              {CLIENT_LOGOS.map((logo) => (
+                <a
+                  key={logo.id}
+                  href={logo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/logo relative flex-shrink-0 w-20 h-20 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
                 >
                   <img
-                    src={`/logos/logo-${n}.svg`}
-                    alt={`Cliente ${n}`}
+                    src={logo.src}
+                    alt={`Cliente ${logo.id}`}
                     className="w-full h-full object-cover"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-full">
+                    <span className="text-white text-[10px] font-bold tracking-wide">Ver más</span>
+                  </div>
+                </a>
               ))}
               {/* Duplicated for seamless loop */}
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                <div
-                  key={`dup-${n}`}
-                  className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              {CLIENT_LOGOS.map((logo) => (
+                <a
+                  key={`dup-${logo.id}`}
+                  href={logo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/logo relative flex-shrink-0 w-20 h-20 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
                 >
                   <img
-                    src={`/logos/logo-${n}.svg`}
-                    alt={`Cliente ${n}`}
+                    src={logo.src}
+                    alt={`Cliente ${logo.id}`}
                     className="w-full h-full object-cover"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-[#053040]/70 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-full">
+                    <span className="text-white text-[10px] font-bold tracking-wide">Ver más</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
@@ -362,14 +466,21 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] md:auto-rows-[200px]">
               {shuffledPortfolio.length > 0 ? (
                 shuffledPortfolio.map((item, index) => {
-                  const isVideo = item.sIdx === 0;
-                  // Masonry logic: vary spans based on index
-                  let colSpan = "col-span-1";
-                  let rowSpan = "row-span-1";
-
-                  if (index === 1 || index === 6) rowSpan = "row-span-2";
-                  if (index === 2) { colSpan = "col-span-2"; rowSpan = "row-span-2"; }
-                  if (index === 5) colSpan = "col-span-1 md:col-span-2";
+                  const isVideo = isVideoService(item.sIdx);
+                  // Masonry logic: dynamic cyclic pattern for infinite items
+                  const MASONRY_PATTERN = [
+                    { col: "col-span-1", row: "row-span-1" },
+                    { col: "col-span-1", row: "row-span-2" },
+                    { col: "col-span-2", row: "row-span-2" },
+                    { col: "col-span-1", row: "row-span-1" },
+                    { col: "col-span-1", row: "row-span-1" },
+                    { col: "col-span-1 md:col-span-2", row: "row-span-1" },
+                    { col: "col-span-1", row: "row-span-2" },
+                    { col: "col-span-1", row: "row-span-1" },
+                  ];
+                  const pattern = MASONRY_PATTERN[index % MASONRY_PATTERN.length];
+                  const colSpan = pattern.col;
+                  const rowSpan = pattern.row;
 
                   return (
                     <div key={`${item.sIdx}-${item.cIdx}`} className={`group relative ${colSpan} ${rowSpan} rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all`}>
@@ -481,7 +592,7 @@ export default function Home() {
                       onClick={() => setActiveCase(i)}
                     >
                       <div className="relative aspect-[4/3] w-full">
-                        {activeService === 0 ? (
+                        {isVideoService(activeService) ? (
                           <video
                             src={item.media}
                             autoPlay
@@ -521,7 +632,7 @@ export default function Home() {
                       </span>
 
                       <div className="flex items-center gap-4 mb-8">
-                        {activeService === 0 ? (
+                        {isVideoService(activeService) ? (
                           <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#577c8e] flex-shrink-0">
                             <video src={SERVICES_DATA[activeService].cases[activeCase].media} autoPlay loop muted playsInline className="w-full h-full object-cover" />
                           </div>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Facebook, Instagram, Youtube, Mail } from "lucide-react";
+import { Facebook, Instagram, Mail } from "lucide-react";
 
 export function Footer() {
     const pathname = usePathname();
@@ -69,9 +69,6 @@ export function Footer() {
                             </a>
                             <a href="https://www.facebook.com/CantonCreativo" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="Facebook">
                                 <Facebook size={20} />
-                            </a>
-                            <a href="https://www.youtube.com/@frank.escobedo" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffffff] bg-[#184c56] p-3 rounded-full transition-transform hover:scale-110" aria-label="YouTube">
-                                <Youtube size={20} />
                             </a>
                         </div>
                     </div>

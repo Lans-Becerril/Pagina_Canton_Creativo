@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Instagram, Facebook, Youtube, Menu, X } from "lucide-react";
+import { Instagram, Facebook, Menu, X } from "lucide-react";
 
 export function Navbar() {
     const pathname = usePathname();
@@ -84,9 +84,6 @@ export function Navbar() {
                         <a href="https://facebook.com/CantonCreativo" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:text-[#577c8e] transition-all duration-300 cursor-pointer">
                             <Facebook size={20} />
                         </a>
-                        <a href="https://www.youtube.com/@frank.escobedo" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:text-[#577c8e] transition-all duration-300 cursor-pointer">
-                            <Youtube size={20} />
-                        </a>
                     </div>
                 </div>
 
@@ -126,9 +123,6 @@ export function Navbar() {
                         </a>
                         <a href="https://facebook.com/CantonCreativo" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:text-[#577c8e] transition-all duration-300 cursor-pointer">
                             <Facebook className="w-5 h-5" />
-                        </a>
-                        <a href="https://www.youtube.com/@frank.escobedo" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:text-[#577c8e] transition-all duration-300 cursor-pointer">
-                            <Youtube className="w-5 h-5" />
                         </a>
                     </div>
                 </div>
