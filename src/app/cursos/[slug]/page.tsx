@@ -4,6 +4,12 @@ import Link from "next/link";
 import { PlayCircle, ShieldCheck, HelpCircle, Lightbulb, Users, Award, ChevronDown } from "lucide-react";
 import { courses } from "@/data/courses";
 
+export async function generateStaticParams() {
+    return courses.map((course) => ({
+        slug: course.slug,
+    }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
     const course = courses.find((c) => c.slug === resolvedParams.slug);
