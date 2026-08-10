@@ -3,7 +3,7 @@ name: Despliegue Automático a Hostinger
 on:
   push:
     branches:
-      - main
+      - main # Cambia a 'master' si la rama principal en GitHub tiene ese nombre
 
 jobs:
   build-and-deploy:
